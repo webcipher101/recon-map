@@ -23,7 +23,7 @@ A simple and easy to understand bash script to automate recon :)
 
 >>> git clone https://github.com/webcipher101/recon-map.git
 
->>> cd
+>>> cd recon-map
  
 >>> chmod +x *
 
