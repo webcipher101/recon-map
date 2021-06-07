@@ -19,7 +19,7 @@ A simple and easy to understand bash script to automate recon :)
 
 # now install recon-map :-
 
-![](demo.png)
+![](demo1.png)
 
 >>> git clone 
 >>> cd 
