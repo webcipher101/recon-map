@@ -21,10 +21,14 @@ A simple and easy to understand bash script to automate recon :)
 
 ![](demo1.png)
 
->>> git clone 
->>> cd 
+>>> git clone https://github.com/webcipher101/recon-map.git
+
+>>> cd
+ 
 >>> chmod +x *
+
 >>> ./setup.sh
+
 >>> ./recon.sh
 
 >>> enter your target name with (.com , .io , .net ,etc)
