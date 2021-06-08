@@ -146,14 +146,15 @@ sleep 10
 sudo rm -rf url1.txt url2.txt
 sleep 2
 sudo mv domains.txt $mypwd/$target/
+sudo rm -rf subdomain.txt
 sleep 1
-cat domains.txt | gf xss | tee xss.txt
+cat urls.txt | gf xss | tee xss.txt
 sleep 1
-cat domains.txt | gf ssrf | tee ssrf.txt
+cat urls.txt | gf ssrf | tee ssrf.txt
 sleep 1
-cat domains.txt | gf lfi | tee lfi.txt
+cat urls.txt | gf lfi | tee lfi.txt
 sleep 1
-cat domains.txt | gf redirect | tee redirect.txt
+cat urls.txt | gf redirect | tee redirect.txt
 sleep 10
 sudo mv urls.txt $mypwd/$target/
 sudo mv xss.txt $mypwd/$target/
