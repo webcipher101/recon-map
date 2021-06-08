@@ -22,7 +22,7 @@ A simple and easy to understand bash script to automate recon :)
 
 2.) install knockpy tool manually <a href="https://github.com/guelfoweb/knock.git">link</a>
 
-3. install gau tool manually <a href="https://github.com/lc/gau.git">link</a>
+3.) install gau tool manually <a href="https://github.com/lc/gau.git">link</a>
 
 4.) install waybackurls tool manually <a href="https://github.com/tomnomnom/waybackurls.git">link</a>
 
@@ -31,15 +31,15 @@ A simple and easy to understand bash script to automate recon :)
 
 ![](demo1.png)
 
->>> git clone https://github.com/webcipher101/recon-map.git
+1.) git clone https://github.com/webcipher101/recon-map.git
 
->>> cd recon-map
+2.) cd recon-map
  
->>> chmod +x *
+3.) chmod +x *
 
->>> ./setup.sh
+4.) ./setup.sh
 
->>> ./recon.sh
+5.) ./recon.sh
 
 >>> enter your target name with (.com , .io , .net ,etc)
     example :- google.com
