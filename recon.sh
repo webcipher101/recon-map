@@ -28,8 +28,9 @@ mkdir $target
 echo " >>> your target name is >>> $target"
 sleep 2
 
+echo -e "\e[37m          *** initial recon is started    **     "
 # using nmap for port scanning
-echo -e "\e[37m          *** Nmap is started            ***     "
+echo -e "\e[37m          *** Nmap is started    ***     "
 sudo nmap -open $target >> nmap-output.txt
 sleep 20
 
@@ -89,7 +90,7 @@ echo -e "\e[96m \w/ @ webcipher101"
 sleep 10
 
 #starting subdomain enum
-
+echo -e "\e[37m          *** subdomain enum  is started  ***       "
 #echo user's input
 echo -e "\e[37m>>> your domain name is $target "
 
@@ -103,13 +104,13 @@ URL="https://search.censys.io/search?resource=hosts&q=$target"; xdg-open $URL ||
 
 # nslookup for checking dnsrecord
 echo -e "\e[37m          *** subfinder is started        ***       "
-sudo subfinder -d $target >> subfinder.txt
+sudo subfinder -d $target -o subfinder.txt
 sleep 15
 echo -e "\e[37m          *** assetfinder is started      ***       "
-sudo assetfinder -subs-only $target >> assetfinder.txt
+sudo assetfinder -subs-only $target | tee assetfinder.txt
 sleep 15
 echo -e "\e[37m          *** findomain is started        ***       "
-sudo findomain -t $target >> findomain.txt
+sudo findomain -t $target -u findomain.txt
 sleep 10
 echo -e "\e[37m          *** knockpy is started          ***       "
 mkdir knockpy
@@ -117,19 +118,48 @@ sleep 1
 sudo knockpy $target -o $mypwd/knockpy
 sleep 40
 echo -e "\e[37m          *** amass is started            ***       "
-sudo amass enum -d $target >> amass.txt
+sudo amass enum -d $target -o amass1.txt
 sleep 40
+sudo amass enum -brute -active -d $target -o amass2.txt
 # pop message to users
 echo -e "\e[37m>>> please wait for some time im working fine ....**\e[0m"
-sudo mv subfinder.txt $mypwd/$target/
-sleep 2
-sudo mv amass.txt $mypwd/$target/
-sleep 2
-sudo mv findomain.txt $mypwd/$target/
-sleep 2
-sudo mv assetfinder.txt $mypwd/$target/
-sleep 2
+
 sudo mv knockpy $mypwd/$target/
+sleep 2
+
+sudo sort subfinder.txt amass1.txt amass2.txt findomain.txt assetfinder.txt | uniq >> subdomain.txt
+sleep 5
+cat subdomain.txt | httpx | tee domains.txt
+sleep 30
+sudo rm -rf subfinder.txt amass1.txt amass2.txt findomain.txt assetfinder.txt
+
+# url enumeration is started
+
+echo -e "\e[37m          *** url enum is started        ***       "
+
+cat domains.txt | waybackurls | tee url1.txt
+sleep 15
+cat domains.txt | gau | tee url2.txt
+sleep 15
+sudo sort url1.txt url2.txt | uniq >> urls.txt
+sleep 10
+sudo rm -rf url1.txt url2.txt
+sleep 2
+sudo mv domains.txt $mypwd/$target/
+sleep 1
+cat domains.txt | gf xss | tee xss.txt
+sleep 1
+cat domains.txt | gf ssrf | tee ssrf.txt
+sleep 1
+cat domains.txt | gf lfi | tee lfi.txt
+sleep 1
+cat domains.txt | gf redirect | tee redirect.txt
+sleep 10
+sudo mv urls.txt $mypwd/$target/
+sudo mv xss.txt $mypwd/$target/
+sudo mv ssrf.txt $mypwd/$target/
+sudo mv lfi.txt $mypwd/$target/
+sudo mv redirect.txt $mypwd/$target/
 sleep 2
 
 # emoji to notify about end
@@ -147,4 +177,3 @@ echo -e "\e[37m><><>< HEY $im thanks for using Recon-Map ><><><"
 sleep 2
 
 # end
-
