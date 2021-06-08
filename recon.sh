@@ -145,6 +145,8 @@ sudo sort url1.txt url2.txt | uniq >> urls.txt
 sleep 10
 sudo rm -rf url1.txt url2.txt
 sleep 2
+cat domains.txt | aquatone -out $mypwd/$target/screenshots
+sleep 10
 sudo mv domains.txt $mypwd/$target/
 sudo rm -rf subdomain.txt
 sleep 1
