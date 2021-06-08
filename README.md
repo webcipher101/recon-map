@@ -9,6 +9,8 @@ A simple and easy to understand bash script to automate recon :)
 
 >>> subdomain enumeration
 
+>>> take screenshots of all subdomains
+
 >>> url enumeration using gau and waybackurls
 
 >>> open your default browser and search your target in shodan.io and censys.io
@@ -27,6 +29,8 @@ A simple and easy to understand bash script to automate recon :)
 3.) install gau tool manually <a href="https://github.com/lc/gau.git">link</a>
 
 4.) install waybackurls tool manually <a href="https://github.com/tomnomnom/waybackurls.git">link</a>
+
+5.) install aquatone tool manually <a href="https://github.com/michenriksen/aquatone.git">link</a>
 
 
 # now install recon-map :-
