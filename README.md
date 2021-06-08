@@ -5,6 +5,12 @@ A simple and easy to understand bash script to automate recon :)
 >>> by : webcipher101
 >>> to automate recon for bug hunting
 
+>>> initial recon
+
+>>> subdomain enumeration
+
+>>> url enumeration using gau and waybackurls
+
 >>> if you have any issue about tool dm me on <a href="https://twitter.com/webcipher101?s=09">@webcipher101</a>
 >>> checkout my recon checklist also :- <a href="https://github.com/webcipher101/bug-hunting-recon-checklist">link</a>
 
@@ -15,6 +21,10 @@ A simple and easy to understand bash script to automate recon :)
 1.) install findomain tool manually <a href="https://github.com/Findomain/Findomain.git">link</a>
 
 2.) install knockpy tool manually <a href="https://github.com/guelfoweb/knock.git">link</a>
+
+3. install gau tool manually <a href="https://github.com/lc/gau.git">link</a>
+
+4.) install waybackurls tool manually <a href="https://github.com/tomnomnom/waybackurls.git">link</a>
 
 
 # now install recon-map :-
