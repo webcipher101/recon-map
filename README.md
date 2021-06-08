@@ -11,7 +11,7 @@ A simple and easy to understand bash script to automate recon :)
 
 >>> url enumeration using gau and waybackurls
 
->>> if you have any issue about tool dm me on <a href="https://twitter.com/webcipher101?s=09">@webcipher101</a>
+>>> if you have any issue about script dm me on <a href="https://twitter.com/webcipher101?s=09">@webcipher101</a>
 >>> checkout my recon checklist also :- <a href="https://github.com/webcipher101/bug-hunting-recon-checklist">link</a>
 
 
