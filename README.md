@@ -52,7 +52,7 @@ A simple and easy to understand bash script to automate recon :)
     
 >>> it will take 15-20 minutes to complete a task , depends on your (target) and also on internet or pc speed.
 
->>> while sudmain enumeration it will open shodan.io and censys.io with your target search results in browser ,check it out.
+>>> while subdomain enumeration it will open shodan.io and censys.io with your target search results in browser ,check it out.
 >>> checkout all outputs in your target named folder.
 
 
